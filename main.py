@@ -35,18 +35,18 @@ def quad():
         D = ((b ** 2) - (4 * a * c))
         if D < 0:
             p = D * -1
-            A = fractions.Fraction((-b + math.sqrt(p)) / (2 * a))
-            B = fractions.Fraction((-b - math.sqrt(p)) / (2 * a))
+            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
+            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
             print("The roots of the quadratic equation is", A, "i", "and", B, "i")
             print("The roots of the quadratic equation are imaginary")
         elif D == 0:
-            A= fractions.Fraction((-b + math.sqrt(D))/(2*a))
-            B= fractions.Fraction((-b - math.sqrt(D))/(2*a))
+            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
+            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
             print("The roots of the quadratic equation is", A, "and", B)
             print("The roots of this equation are real and equal")
         elif D > 0:
-            A = fractions.Fraction((-b + math.sqrt(D)) / (2 * a))
-            B = fractions.Fraction((-b - math.sqrt(D)) / (2 * a))
+            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
+            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
             print("The roots of the quadratic equation is", A, "and", B)
             print("The roots of this equation are real and distinct")
 
