@@ -3,7 +3,7 @@ import fractions
 
 def calc():
     num1 =float(input("Enter your first number:\n===>"))
-    op =input("Choose your operator: + , - , * , ^ , / , sqrt , log , antilog\n===>")
+    op =input("Choose your operator: + , - , x , ^ , / , sqrt , log , antilog\n===>")
     if op == "sqrt":
         print(math.sqrt(num1))
     elif op == "log":
@@ -16,7 +16,7 @@ def calc():
             print(num1 + num2)
         elif op == "-":
             print(num1 - num2)
-        elif op == "*":
+        elif op == "x":
             print(num1 * num2)
         elif op == "^":
             print(num1 ** num2)
