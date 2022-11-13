@@ -2,26 +2,32 @@ import math
 import fractions
 
 def calc():
-    num1 =float(input("Enter your first number:\n===>"))
-    op =input("Choose your operator: + , - , x , ^ , / , sqrt , log , antilog\n===>")
-    if op == "sqrt":
-        print(math.sqrt(num1))
-    elif op == "log":
-        print(math.log10(num1))
-    elif op == "antilog":
-        print(10 ** num1)
-    else:
-        num2 = float(input("Enter your second number:\n===>"))
-        if op == "+":
-            print(num1 + num2)
-        elif op == "-":
-            print(num1 - num2)
-        elif op == "x":
-            print(num1 * num2)
-        elif op == "^":
-            print(num1 ** num2)
-        elif op == "/":
-            print(num1 / num2)
+    try:
+        num1 = float(input("Enter your first number:\n===>"))
+        op = input("Choose your operator: + , - , x , ^ , / , sqrt , log , antilog\n===>")
+        if op == "sqrt":
+            print(math.sqrt(num1))
+        elif op == "log":
+            print(math.log10(num1))
+        elif op == "antilog":
+            print(10 ** num1)
+        else:
+            num2 = float(input("Enter your second number:\n===>"))
+            if op == "+":
+                print(num1 + num2)
+            elif op == "-":
+                print(num1 - num2)
+            elif op == "x":
+                print(num1 * num2)
+            elif op == "^":
+                print(num1 ** num2)
+            elif op == "/":
+                print(num1 / num2)
+    except ValueError:
+        print("Please enter a number\n")
+        calc()
+    except ZeroDivisionError:
+        print("You cannot divide by zero")
 
 def quad():
     print("ax^2+bx+c")
