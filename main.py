@@ -43,19 +43,21 @@ def quad():
             p = D * -1
             A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
             B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "i", "and", B, "i")
             print("The roots of the quadratic equation are imaginary")
         elif D == 0:
             A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
             B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "and", B)
             print("The roots of this equation are real and equal")
         elif D > 0:
             A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
             B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "and", B)
             print("The roots of this equation are real and distinct")
-
 
 def area():
     Z = input(
