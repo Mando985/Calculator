@@ -2,6 +2,18 @@ import math
 import fractions
 
 def calc():
+    a = input(
+        "Do you want to solve a rational number problems or a complex numbers problem?\na)Rational Numbers\nb)Complex Numbers\n====>")
+    if a == "a":
+        rationalnums()
+    elif a == "b":
+        complexnums()
+    else:
+        print("Enter a valid option!\n")
+        calc()
+
+
+def rationalnums():
     try:
         num1 = float(input("Enter your first number:\n===>"))
         op = input("Choose your operator: + , - , x , ^ , / , sqrt , log , antilog\n===>")
@@ -28,6 +40,28 @@ def calc():
         calc()
     except ZeroDivisionError:
         print("You cannot divide by zero")
+
+
+def complexnums():
+    try:
+        a1=float(input("Enter the a1:\n"))
+        b1=float(input("Enter the b1:\n"))
+        op = input("Choose your operator: + , - , x , /\n===>")
+        a2=float(input("Enter the a2:\n"))
+        b2=float(input("Enter the b2:\n"))
+        z1=complex(a1,b1)
+        z2=complex(a2,b2)
+        if op == "+":
+            print(z1 + z2)
+        elif op == "-":
+            print(z1 - z2)
+        elif op == "x":
+            print(z1 * z2)
+        elif op == "/":
+            print(z1/z2)
+    except ZeroDivisionError:
+        print("You cannot divide by zero")
+
 
 def quad():
     print("ax^2+bx+c")
@@ -58,6 +92,7 @@ def quad():
             print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "and", B)
             print("The roots of this equation are real and distinct")
+
 
 def area():
     Z = input(
@@ -147,7 +182,7 @@ def SA_Vol():
     elif Input2 == "c":
         vol()
 
-a=input(''' Welcome, which one of the following calculator do you want to run?
+a=input('''Welcome, which one of the following calculator do you want to run?
 A) Arithmetic Calculator
 B) Quadratic Equation Solver
 C) Area,Total Surface Area or the Volume of the Shape
@@ -161,7 +196,3 @@ elif b=="b":
     quad()
 elif b=="c":
     SA_Vol()
-
-
-
-
