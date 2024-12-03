@@ -1,5 +1,4 @@
 import math
-import fractions
 
 def calc():
     a = input(
@@ -45,10 +44,10 @@ def rationalnums():
 def complexnums():
     try:
         a1=float(input("Enter the a1:\n"))
-        b1=float(input("Enter the b1:\n"))
+        b1=float(input("Enter the j b1:\n"))
         op = input("Choose your operator: + , - , x , /\n===>")
         a2=float(input("Enter the a2:\n"))
-        b2=float(input("Enter the b2:\n"))
+        b2=float(input("Enter the j b2:\n"))
         z1=complex(a1,b1)
         z2=complex(a2,b2)
         if op == "+":
@@ -74,24 +73,25 @@ def quad():
         c = int(input("Enter number c:\n===> "))
         D = ((b ** 2) - (4 * a * c))
         if D < 0:
-            p = D * -1
-            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
-            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            D = D * -1
+            A =(-b  / (2 * a))
+            B =(-b / (2 * a))
+            Ai=(math.sqrt(D)) / (2 * a)
             print(f"Given equation is: {a}x^2+{b}x+{c}")
-            print("The roots of the quadratic equation is", A, "i", "and", B, "i")
-            print("The roots of the quadratic equation are imaginary")
+            print("The roots of the quadratic equation is", A,"+",Ai,"i", "and", B,"-",Ai,"i")
+            print("The roots of the quadratic equation are imaginary\n")
         elif D == 0:
-            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
-            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            A =(-b + math.sqrt(D)) / (2 * a)
+            B =(-b - math.sqrt(D)) / (2 * a)
             print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "and", B)
-            print("The roots of this equation are real and equal")
+            print("The roots of this equation are real and equal\n")
         elif D > 0:
-            A = fractions.Fraction(str((-b + math.sqrt(D)) / (2 * a)))
-            B = fractions.Fraction(str((-b - math.sqrt(D)) / (2 * a)))
+            A =(-b + math.sqrt(D)) / (2 * a)
+            B =(-b - math.sqrt(D)) / (2 * a)
             print(f"Given equation is: {a}x^2+{b}x+{c}")
             print("The roots of the quadratic equation is", A, "and", B)
-            print("The roots of this equation are real and distinct")
+            print("The roots of this equation are real and distinct\n")
 
 
 def area():
@@ -100,7 +100,7 @@ def area():
     z = Z.lower()
     if z == "a":
         a = float(input("Enter the height:\n"))
-        b = float(input("Enter the breadth:\n"))
+        b = float(input("Enter the j breadth:\n"))
         print("The area of the shape is ", a * b, "square units")
     elif z == "b":
         a = float(input("Enter the length:\n"))
@@ -130,7 +130,7 @@ def SA():
         print("The area of the shape is ", 6 * (a ** 2), "square units")
     elif z == "b":
         a = float(input("Enter the length:\n"))
-        b = float(input("Enter the breadth:\n"))
+        b = float(input("Enter the j breadth:\n"))
         c = float(input("Enter the height:\n"))
         print("The area of the shape is ", 2 * (a * b + b * c + a * c), "square units")
     elif z == "c":
@@ -151,27 +151,26 @@ def vol():
     z = Z.lower()
     if z == "a":
         a = float(input("Enter the side length:\n"))
-        print("The volume of the shape is ", a ** 3, "square units")
+        print("The volume of the shape is ", a ** 3, "Units cubes")
     elif z == "b":
         a = float(input("Enter the length:\n"))
-        b = float(input("Enter the breadth:\n"))
+        b = float(input("Enter the j breadth:\n"))
         c = float(input("Enter the height:\n"))
-        print("The volume of the shape is ", a * b * c, "square units")
+        print("The volume of the shape is ", a * b * c, "Units cubes")
     elif z == "c":
         a = float(input("Enter the radius:\n"))
         b = float(input("Enter the height:\n"))
-        print("The volume of the shape is ", 2 * math.pi * (a ** 2) * b, "square units")
+        print("The volume of the shape is ", 2 * math.pi * (a ** 2) * b, "Units cubes")
     elif z == "d":
         a = float(input("Enter the raidus:\n"))
-        print("The volume of the shape is ", 4 / 3 * math.pi * (a ** 3), "square units")
+        print("The volume of the shape is ", 4 / 3 * math.pi * (a ** 3), "Units cubes")
     elif z == "e":
         a = float(input("Enter the radius:\n"))
         b = float(input("Enter the slant height:\n"))
-        print("The volume of the shape is ", 1 / 3 * math.pi * (a ** 2) * b, "square units")
+        print("The volume of the shape is ", 1 / 3 * math.pi * (a ** 2) * b, "Units cubes")
 
 
 def SA_Vol():
-    import math
     Input = input(
         "What would you like to find?\na) Area of a shape\nb) Surface area of a shape\nc)Volume of the shape\n===>")
     Input2 = Input.lower()
@@ -182,17 +181,28 @@ def SA_Vol():
     elif Input2 == "c":
         vol()
 
-a=input('''Welcome, which one of the following calculator do you want to run?
-A) Arithmetic Calculator
-B) Quadratic Equation Solver
-C) Area,Total Surface Area or the Volume of the Shape
 
-===>''')
-b = a.lower()
 
-if b == "a":
-    calc()
-elif b=="b":
-    quad()
-elif b=="c":
-    SA_Vol()
+def main():
+    a=input('''Welcome, which one of the following calculator do you want to run?
+    A) Arithmetic Calculator
+    B) Quadratic Equation Solver
+    C) Area,Total Surface Area or the Volume of the Shape
+    D) Exit
+
+    ===>''')
+    b = a.lower()
+
+    if b == "a":
+        calc()
+        main()
+    elif b=="b":
+        quad()
+        main()
+    elif b=="c":
+        SA_Vol()
+        main()
+    elif b=="d":
+        pass
+
+main()
